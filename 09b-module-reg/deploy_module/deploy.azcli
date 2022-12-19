@@ -1,0 +1,8 @@
+RG=rg-acr-bicep
+
+# retrieve acr name from resource group
+ACR=$(az acr list --resource-group $RG --query "[].name" -o tsv)
+
+# upload bicep module to acr
+az bicep publish --file storage.bicep \
+    --target "br:${ACR}.azurecr.io/bicep/modules/storage:v1.0.0"
