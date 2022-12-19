@@ -1,0 +1,9 @@
+RG=demo-RG
+LOCATION=westeurope
+
+# Create a resource group.
+az group create --name $RG --location $LOCATION
+
+# Bicep what if analysis
+az deployment group what-if --resource-group $RG --template-file ./main.bicep \
+    --parameters parLocation=$LOCATION

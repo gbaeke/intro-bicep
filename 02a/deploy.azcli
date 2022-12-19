@@ -1,0 +1,6 @@
+LOCATION=westeurope
+
+
+# deploy bicep to subscription
+az deployment sub create --location $LOCATION --template-file ./main.bicep \
+    --parameters parLocation=$LOCATION
