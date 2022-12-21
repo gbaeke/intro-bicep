@@ -15,7 +15,7 @@ param parStorageAccounts array = [
   }
 ]
 
-module accounts 'storage.bicep' = {
+module accounts 'modules/storage.bicep' = {
   name: 'sa'
   params: {
     parStorageAccounts: parStorageAccounts
